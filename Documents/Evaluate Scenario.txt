@@ -1,0 +1,42 @@
+sales
+
+Make to stock
+1. Sales order create (unconfirmed)
+2. Check ATP
+- Check available in stock (QoH - Allocated)
+- Consider scheduled receipt
+3. Sales Order confirm
+4. Allocate
+5. Pick
+6. Pack
+7. Shipment
+
+Make-to-order
+1. Sales order create (unconfirmed)
+2. Simulated WO
+- Estimate WO Cost
+- Estimate Promise Date 
+	- WO component availability, projected quantity
+	- WO routing duration
+	- WO resource capacity
+4. Sales Order confirm
+5. Work Order Release
+6. Picklist and Routing Print
+7. Component Issue
+8. Finish Good Receipt
+9. Pick for SO
+10. Pack for SO
+11. Shipment
+
+Inventory
+1. Move in
+- Purchase receipt
+- WO Receipt
+2. Move out
+3. Transfer among locations
+4. Allocation
+
+Accounting
+1. Billing plan for Sales Order
+2. Account payable
+
