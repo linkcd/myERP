@@ -10,8 +10,12 @@ gem 'json'
 group :development, :test do 
   gem 'sqlite3-ruby', :require => 'sqlite3'
   gem 'sqlite3', '1.3.5'
+  gem 'pg'
 end 
 
+group production do
+  gem 'pg'
+end
 
 # Gems used only for assets and not required
 # in production environments by default.
