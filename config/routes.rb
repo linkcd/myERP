@@ -1,4 +1,6 @@
 MyERP::Application.routes.draw do
+  resources :locations
+
   resources :items
 
   resources :users
