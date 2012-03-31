@@ -6,10 +6,18 @@
 </p>
 
 <p>
+  <b>Name:</b>
+  <%= @location.name %>
+</p>
+
+<p>
   <b>Description:</b>
   <%= @location.description %>
 </p>
-
-
+<%  @location.location_properties.each do |p|  %>
+    <ul>
+        <%= p.name %>
+    </ul>
+<% end %>
 <%= link_to 'Edit', edit_location_path(@location) %> |
 <%= link_to 'Back', locations_path %>

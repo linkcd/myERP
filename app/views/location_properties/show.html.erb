@@ -1,0 +1,20 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Id:</b>
+  <%= @location_property.id %>
+</p>
+
+<p>
+  <b>Name:</b>
+  <%= @location_property.name %>
+</p>
+
+<p>
+  <b>Description:</b>
+  <%= @location_property.description %>
+</p>
+
+
+<%= link_to 'Edit', edit_location_property_path(@location_property) %> |
+<%= link_to 'Back', location_properties_path %>
