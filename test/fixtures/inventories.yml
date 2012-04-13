@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  item_id: 1
+  location_id: 
+  amount: 9.99
+  measurement: MyString
+
+two:
+  item_id: 1
+  location_id: 
+  amount: 9.99
+  measurement: MyString

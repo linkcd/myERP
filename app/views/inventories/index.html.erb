@@ -1,0 +1,29 @@
+<h1>Listing inventories</h1>
+
+<table>
+  <tr>
+    <th>Item</th>
+    <th>Location</th>
+    <th>Amount</th>
+    <th>Measurement</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @inventories.each do |inventory| %>
+  <tr>
+    <td><%= inventory.item_id %></td>
+    <td><%= inventory.location_id %></td>
+    <td><%= inventory.amount %></td>
+    <td><%= inventory.measurement %></td>
+    <td><%= link_to 'Show', inventory %></td>
+    <td><%= link_to 'Edit', edit_inventory_path(inventory) %></td>
+    <td><%= link_to 'Destroy', inventory, confirm: 'Are you sure?', method: :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Inventory', new_inventory_path %>

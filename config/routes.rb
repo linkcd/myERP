@@ -1,4 +1,6 @@
 MyERP::Application.routes.draw do
+  resources :inventories
+
   resources :location_properties
 
   get "static_pages/home"
