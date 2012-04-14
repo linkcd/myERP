@@ -11,7 +11,7 @@
 <% @inventories.each do |inventory| %>
   <tr>
     <td><%= Item.find(inventory.item_id).name %></td>
-    <td><%= Location.find(inventory.item_id).name %></td>
+    <td><%= Location.find(inventory.location_id).name %></td>
     <td><%= inventory.amount %></td>
     <td><%= inventory.measurement %></td>
     <td><%= link_to 'Show', inventory %></td>
