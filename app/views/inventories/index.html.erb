@@ -1,20 +1,17 @@
 <h1>Listing inventories</h1>
 
-<table>
-  <tr>
+<table class="table">
+  <thead>
     <th>Item</th>
     <th>Location</th>
     <th>Amount</th>
     <th>Measurement</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
-
+  </thead>
+  <tbody>
 <% @inventories.each do |inventory| %>
   <tr>
-    <td><%= inventory.item_id %></td>
-    <td><%= inventory.location_id %></td>
+    <td><%= Item.find(inventory.item_id).name %></td>
+    <td><%= Location.find(inventory.item_id).name %></td>
     <td><%= inventory.amount %></td>
     <td><%= inventory.measurement %></td>
     <td><%= link_to 'Show', inventory %></td>
@@ -22,6 +19,7 @@
     <td><%= link_to 'Destroy', inventory, confirm: 'Are you sure?', method: :delete %></td>
   </tr>
 <% end %>
+<tbody>
 </table>
 
 <br />
