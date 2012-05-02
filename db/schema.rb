@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120414093553) do
+ActiveRecord::Schema.define(:version => 20120502063349) do
 
   create_table "inventories", :force => true do |t|
     t.integer  "item_id"
@@ -20,6 +20,17 @@ ActiveRecord::Schema.define(:version => 20120414093553) do
     t.string   "measurement"
     t.datetime "created_at",  :null => false
     t.datetime "updated_at",  :null => false
+  end
+
+  create_table "inventory_operations", :force => true do |t|
+    t.integer  "item_id"
+    t.integer  "from_location_id"
+    t.integer  "to_location_id"
+    t.decimal  "amout"
+    t.datetime "created_at",       :null => false
+    t.datetime "updated_at",       :null => false
+    t.date     "date"
+    t.boolean  "IsCompleted"
   end
 
   create_table "items", :force => true do |t|

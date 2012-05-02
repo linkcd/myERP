@@ -13,11 +13,11 @@
 
   <div class="field">
     <%= f.label :item_id %><br />
-    <%= f.number_field :item_id %>
+    <%= collection_select(:inventory, :item_id, Item.all, :id, :name) %>  
   </div>
   <div class="field">
     <%= f.label :location_id %><br />
-    <%= f.number_field :location_id %>
+    <%= collection_select(:inventory, :location_id, Location.all, :id, :name) %>
   </div>
   <div class="field">
     <%= f.label :amount %><br />

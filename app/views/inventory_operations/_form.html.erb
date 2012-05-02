@@ -1,0 +1,41 @@
+<%= form_for(@inventory_operation) do |f| %>
+  <% if @inventory_operation.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@inventory_operation.errors.count, "error") %> prohibited this inventory_operation from being saved:</h2>
+
+      <ul>
+      <% @inventory_operation.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :item_id %><br />
+    <%= collection_select(:inventory_operation, :item_id, Item.all, :id, :name) %>
+  </div>
+  <div class="field">
+    <%= f.label :amout %><br />
+    <%= f.text_field :amout %>
+  </div>
+  <div class="field">
+    <%= f.label :date %><br />
+    <%= f.text_field :date %>
+  </div>
+  <div class="field">
+    <%= f.label :from_location_id %><br />
+    <%= collection_select(:inventory_operation, :from_location_id, Location.all, :id, :name) %>
+  </div>
+  <div class="field">
+    <%= f.label :to_location_id %><br />
+    <%= collection_select(:inventory_operation, :to_location_id, Location.all, :id, :name) %>
+  </div>
+  <div class="field">
+    <%= f.label :IsCompleted %><br />
+    <%= f.check_box :to_location_id %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

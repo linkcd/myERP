@@ -1,4 +1,6 @@
 MyERP::Application.routes.draw do
+  resources :inventory_operations
+
   resources :inventories
 
   resources :location_properties

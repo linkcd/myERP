@@ -1,0 +1,29 @@
+<h1>Listing inventory_operations</h1>
+
+<table>
+  <tr>
+    <th>Item</th>
+    <th>From location</th>
+    <th>To location</th>
+    <th>Amout</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @inventory_operations.each do |inventory_operation| %>
+  <tr>
+    <td><%= inventory_operation.item_id %></td>
+    <td><%= inventory_operation.from_location_id %></td>
+    <td><%= inventory_operation.to_location_id %></td>
+    <td><%= inventory_operation.amout %></td>
+    <td><%= link_to 'Show', inventory_operation %></td>
+    <td><%= link_to 'Edit', edit_inventory_operation_path(inventory_operation) %></td>
+    <td><%= link_to 'Destroy', inventory_operation, confirm: 'Are you sure?', method: :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Inventory operation', new_inventory_operation_path %>

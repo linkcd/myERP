@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  item_id: 1
+  from_location_id: 1
+  to_location_id: 1
+  amout: 9.99
+
+two:
+  item_id: 1
+  from_location_id: 1
+  to_location_id: 1
+  amout: 9.99

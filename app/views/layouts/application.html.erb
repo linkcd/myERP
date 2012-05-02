@@ -16,7 +16,13 @@
           <%= link_to "myERP", home_path, id: "logo" %>
           <nav>
             <ul class="nav">
-              <li><%= link_to "Inventory", inventories_path %></li>
+              <li class="dropdown">
+                <a class="dropdown-toggle" data-toggle="dropdown" href="#">Inventory<b class="caret"></b></a>
+                <ul class="dropdown-menu">
+                  <li><%= link_to "Overview", inventories_path %></li>
+                  <li><%= link_to "Operation", inventory_operations_path %></li>
+                </ul>
+              </li>
               <li class="dropdown">
                 <a class="dropdown-toggle" data-toggle="dropdown" href="#">Master Data<b class="caret"></b></a>
                 <ul class="dropdown-menu">
@@ -24,6 +30,7 @@
                   <li><%= link_to "Location", locations_path %></li>
                   <li><%= link_to "Location Property", location_properties_path %></li>
                 </ul>
+              </li>
               <li class="divider-vertical"></li>
               <li><%= link_to "Home", home_path %></li>
               <li><%= link_to "Help", help_path %></li>
