@@ -23,7 +23,7 @@
   <div id="Properties" >
       <%LocationProperty.all.each do |lp| %>
         <label class="checkbox">
-          <input type="checkbox" name="<%=lp.name%>" value="<%=lp.id%>" <%=@location.location_properties.include?(lp) ? 'checked=checked':nil%>">
+          <input type="checkbox" name="Location_Properties[]" value="<%=lp.id%>" <%=@location.location_properties.include?(lp) ? 'checked=checked':nil%>">
           <%= lp.name %> - <%=lp.description%> 
         </label>       
       <% end %>

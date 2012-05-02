@@ -57,7 +57,12 @@ class LocationsController < ApplicationController
   # PUT /locations/1.json
   def update
     @location = Location.find(params[:id])
-
+    #get location properties from GUI, and attach it to location
+    params[:location][:location_properties] = Array.new
+    params[:Location_Properties].each do |lp_id|
+      lp = LocationProperty.find(lp_id)
+      params[:location][:location_properties] << lp
+    end
     respond_to do |format|
       if @location.update_attributes(params[:location])
         format.html { redirect_to @location, notice: 'Location was successfully updated.' }
