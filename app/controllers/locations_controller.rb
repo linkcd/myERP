@@ -21,6 +21,15 @@ class LocationsController < ApplicationController
     end
   end
 
+  # GET /locations/1/inventory
+  def inventory
+    @inventories = Inventory.where("location_id = ?", params[:id])
+    @location_name = Location.find(params[:id]).name
+    respond_to do |format|
+      format.html 
+    end
+  end
+
   # GET /locations/new
   # GET /locations/new.json
   def new

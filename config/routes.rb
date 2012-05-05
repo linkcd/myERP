@@ -13,10 +13,18 @@ MyERP::Application.routes.draw do
 
   get "static_pages/contact"
 
-  resources :locations
+  resources :locations do
+    member do
+      get 'inventory'
+    end
+  end
 
-  resources :items
-
+  resources :items do
+    member do
+      get 'inventory'
+    end
+  end
+  
   resources :users
 
   # The priority is based upon order of creation:

@@ -8,6 +8,7 @@
     <th></th>
     <th></th>
     <th></th>
+    <th></th>
   </tr>
 
 <% @items.each do |item| %>
@@ -15,6 +16,7 @@
     <td><%= item.id %></td>
     <td><%= item.name %></td>
     <td><%= item.description %></td>
+    <td><%= link_to 'Show inventory', inventory_item_path(item) %></td>
     <td><%= link_to 'Show', item %></td>
     <td><%= link_to 'Edit', edit_item_path(item) %></td>
     <td><%= link_to 'Destroy', item, confirm: 'Are you sure?', method: :delete %></td>

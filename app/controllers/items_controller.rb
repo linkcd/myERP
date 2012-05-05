@@ -32,6 +32,15 @@ class ItemsController < ApplicationController
     end
   end
 
+  # GET /items/1/inventory
+  def inventory 
+    @inventories = Inventory.where("item_id = ?", params[:id])
+    @item_name = Item.find(params[:id]).name
+    respond_to do |format|
+        format.html
+    end
+  end
+
   # GET /items/1/edit
   def edit
     @item = Item.find(params[:id])
