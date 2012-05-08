@@ -40,10 +40,11 @@
   </div>
 
   <div class="field">
-    <%= f.label :IsCompleted %><br />
+    <%= f.label :IsCompleted %>
     <%= f.check_box :IsCompleted %>
   </div>
+  <br />
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit "Save", :class => "btn-primary"%>
   </div>
 <% end %>

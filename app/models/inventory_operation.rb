@@ -2,7 +2,7 @@ class InventoryOperation < ActiveRecord::Base
   belongs_to :location
   belongs_to :item
 
-  @@operation_types = [:inbound, :internal, :outbound]
+  @@operation_types = [:inbound, :transfer, :outbound]
   
   def self.operation_types
     @@operation_types
@@ -21,10 +21,16 @@ class InventoryOperation < ActiveRecord::Base
   end
 
   def from_location_name
+    if operation_type == 'inbound' then
+      return 'outside'
+    end
     get_location_name(from_location_id)
   end
 
   def to_location_name
+    if operation_type == 'outbound' then
+      return 'outside'
+    end
     get_location_name(to_location_id)
   end
     

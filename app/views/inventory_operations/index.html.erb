@@ -1,12 +1,13 @@
 <h1>Listing inventory_operations</h1>
 
-<table>
+<table class="table">
   <tr>
     <th>Item</th>
     <th>From location</th>
     <th>To location</th>
     <th>Type</th>
     <th>Amount</th>
+    <th>Date</th>
     <th></th>
     <th></th>
     <th></th>
@@ -19,6 +20,7 @@
     <td><%= inventory_operation.to_location_name %></td>
     <td><%= inventory_operation.operation_type %></td>
     <td><%= inventory_operation.amount %></td>
+    <td><%= inventory_operation.date %></td>
     <td><%= link_to 'Show', inventory_operation %></td>
     <td><%= link_to 'Edit', edit_inventory_operation_path(inventory_operation) %></td>
     <td><%= link_to 'Destroy', inventory_operation, confirm: 'Are you sure?', method: :delete %></td>
