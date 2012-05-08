@@ -5,7 +5,8 @@
     <th>Item</th>
     <th>From location</th>
     <th>To location</th>
-    <th>Amout</th>
+    <th>Type</th>
+    <th>Amount</th>
     <th></th>
     <th></th>
     <th></th>
@@ -13,10 +14,11 @@
 
 <% @inventory_operations.each do |inventory_operation| %>
   <tr>
-    <td><%= inventory_operation.item_id %></td>
-    <td><%= inventory_operation.from_location_id %></td>
-    <td><%= inventory_operation.to_location_id %></td>
-    <td><%= inventory_operation.amout %></td>
+    <td><%= Item.find(inventory_operation.item_id).name %></td>
+    <td><%= inventory_operation.from_location_name %></td>
+    <td><%= inventory_operation.to_location_name %></td>
+    <td><%= inventory_operation.operation_type %></td>
+    <td><%= inventory_operation.amount %></td>
     <td><%= link_to 'Show', inventory_operation %></td>
     <td><%= link_to 'Edit', edit_inventory_operation_path(inventory_operation) %></td>
     <td><%= link_to 'Destroy', inventory_operation, confirm: 'Are you sure?', method: :delete %></td>

@@ -16,24 +16,32 @@
     <%= collection_select(:inventory_operation, :item_id, Item.all, :id, :name) %>
   </div>
   <div class="field">
-    <%= f.label :amout %><br />
-    <%= f.text_field :amout %>
+    <%= f.label :amount %><br />
+    <%= f.text_field :amount %>
   </div>
   <div class="field">
     <%= f.label :date %><br />
-    <%= f.text_field :date %>
+    <%= f.date_select :date %>
   </div>
+  
+  <div class="field">
+    <%= f.label :operation_type %><br />
+    <%= select(:inventory_operation, :operation_type, InventoryOperation.operation_types) %>
+  </div>
+
   <div class="field">
     <%= f.label :from_location_id %><br />
     <%= collection_select(:inventory_operation, :from_location_id, Location.all, :id, :name) %>
   </div>
+
   <div class="field">
     <%= f.label :to_location_id %><br />
     <%= collection_select(:inventory_operation, :to_location_id, Location.all, :id, :name) %>
   </div>
+
   <div class="field">
     <%= f.label :IsCompleted %><br />
-    <%= f.check_box :to_location_id %>
+    <%= f.check_box :IsCompleted %>
   </div>
   <div class="actions">
     <%= f.submit %>

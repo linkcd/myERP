@@ -2,6 +2,9 @@
 # All this logic will automatically be available in application.js.
 # You can use CoffeeScript in this file: http://jashkenas.github.com/coffee-script/
 $(document).ready -> 
-    $('#inventory_operation_date').datepicker() if $('#inventory_operation_date').length > 0
+# $('#inventory_operation_date').datepicker() if $('#inventory_operation_date').length > 0
+    $('#tab a:first').tab('show') 
+         
+        
 
 
