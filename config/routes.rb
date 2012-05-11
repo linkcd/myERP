@@ -16,12 +16,14 @@ MyERP::Application.routes.draw do
   resources :locations do
     member do
       get 'inventory'
+      get 'inventory_in_period'
     end
   end
 
   resources :items do
     member do
       get 'inventory'
+      get 'inventory_in_period'
     end
   end
   

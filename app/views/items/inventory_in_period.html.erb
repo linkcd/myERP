@@ -1,0 +1,5 @@
+From: <%= @start_date %>
+To: <%= @end_date %>
+<% @inventories_of_real.each do |key, value| %>
+  <%= key %>:<%= value %><br />
+<% end %>

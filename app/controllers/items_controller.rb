@@ -34,10 +34,30 @@ class ItemsController < ApplicationController
 
   # GET /items/1/inventory
   def inventory 
-    @inventories = Inventory.where("item_id = ?", params[:id])
+    @inventories = Inventory.where(:item_id => params[:id])
     @item_name = Item.find(params[:id]).name
     respond_to do |format|
         format.html
+    end
+  end
+
+  def inventory_in_period
+    @start_date = Date.parse(params[:from])
+    @end_date = Date.parse(params[:to])
+
+    inventory_locations_of_current_item = Inventory.where(:item_id => params[:id])
+    operations_of_current_item = InventoryOperation.where(:item_id => params[:id], :date => @from..@to)
+
+    @inventories_of_real = Hash.new
+    @inventories_of_plan = Hash.new
+
+
+    @start_date.upto(@end_date) do |d|
+      @inventories_of_real[d.to_s] = d
+    end
+
+    respond_to do |format|
+      format.html
     end
   end
 
