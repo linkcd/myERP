@@ -33,14 +33,18 @@ class ItemsController < ApplicationController
   end
 
   # GET /items/1/inventory
+  # GET /items/1/inventory.json
   def inventory 
     @inventories = Inventory.where(:item_id => params[:id])
     @item_name = Item.find(params[:id]).name
     respond_to do |format|
         format.html
+        format.json { render json: @inventories }
     end
   end
 
+  # GET /items/1/inventory_in_period
+  # GET /items/1/inventory_in_period.json
   def inventory_in_period
     @start_date = Date.parse(params[:from])
     @end_date = Date.parse(params[:to])

@@ -15,7 +15,6 @@
     <td><%= Item.find(inventory.item_id).name %></td>
     <td><%= Location.find(inventory.location_id).name %></td>
     <td><%= inventory.amount %></td>
-    <td><%= inventory.measurement %></td>
     <td><%= link_to 'Show', inventory %></td>
     <td><%= link_to 'Edit', edit_inventory_path(inventory) %></td>
     <td><%= link_to 'Destroy', inventory, confirm: 'Are you sure?', method: :delete %></td>
